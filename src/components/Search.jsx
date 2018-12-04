@@ -1,7 +1,7 @@
-var Search = () => (
+var Search = ({handleSubmit}) => (
   <div className="search-bar form-inline">
-    <input className="form-control" type="text" />
-    <button className="btn hidden-sm-down">
+    <input className="form-control" type="text" placeholder="Search" />
+    <button className="btn hidden-sm-down" onClick={handleSubmit()}>
       <span className="glyphicon glyphicon-search"></span>
     </button>
   </div> 
