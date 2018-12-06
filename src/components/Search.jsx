@@ -4,7 +4,7 @@ var Search = (props) => (
     <button className="btn hidden-sm-down" onClick={()=> {
       var query = document.getElementById("userSearch").value;
       props.handleSubmit(query);
-      }}>
+    }} >
       <span className="glyphicon glyphicon-search"></span>
     </button>
   </div> 

@@ -13,13 +13,13 @@ class App extends React.Component {
   }
 
   handleSubmit(query) {
-    var searchMovie = this.state.movies.filter((movie) => {
-      movie.title === query;
-    });
-
+    var searchMovie = this.state.movies.filter(movie =>
+      movie.title === query);
+    console.log(searchMovie);
+  
     this.setState({
       movies: searchMovie,
-    })
+    });
   }
   
   render() {
