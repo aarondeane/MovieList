@@ -1,7 +1,10 @@
-var Search = ({handleSubmit}) => (
+var Search = (props) => (
   <div className="search-bar form-inline">
-    <input className="form-control" type="text" placeholder="Search" />
-    <button className="btn hidden-sm-down" onClick={handleSubmit()}>
+    <input className="form-control" id="userSearch" type="text" placeholder="Search" value={props.searchVal} />
+    <button className="btn hidden-sm-down" onClick={()=> {
+      var query = document.getElementById("userSearch").value;
+      props.handleSubmit(query);
+      }}>
       <span className="glyphicon glyphicon-search"></span>
     </button>
   </div> 

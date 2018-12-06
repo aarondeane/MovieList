@@ -7,13 +7,18 @@ class App extends React.Component {
     super(props);
     this.state = {
       movies: exampleMovieData,
+      searchVal: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit(query) {
+    var searchMovie = this.state.movies.filter((movie) => {
+      movie.title === query;
+    });
+
     this.setState({
-      
+      movies: searchMovie,
     })
   }
   
@@ -25,8 +30,8 @@ class App extends React.Component {
         <h1>Movie List</h1>
       </div>
       </nav>
-      <div class="search-bar">
-        <div><Search handleSubmit={this.handleSubmit}/></div>
+      <div className="search-bar">
+        <div><Search handleSubmit={this.handleSubmit} searchVal={this.searchVal}/></div>
       </div>
       <div className="row">
         <div className="col-md-5">
